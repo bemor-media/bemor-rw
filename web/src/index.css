@@ -1,5 +1,18 @@
 @tailwind base;
 
+html,
+body {
+  @apply min-h-screen w-full overflow-x-hidden bg-pale;
+}
+
+#redwood-app {
+  @apply min-h-screen flex flex-col;
+}
+
+a {
+  @apply text-night;
+}
+
 @tailwind components;
 
 @tailwind utilities;
