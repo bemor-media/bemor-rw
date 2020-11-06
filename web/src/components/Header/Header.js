@@ -12,7 +12,7 @@ const Header = () => {
         </Link>
       </header>
       <nav
-        className={`px-wrap py-2 bg-night text-pale${
+        className={`px-wrap py-1 bg-night text-pale${
           pathname === '/' ? ' flex-1 flex items-center justify-center' : ''
         }`}
       >
