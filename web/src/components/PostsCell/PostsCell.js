@@ -1,4 +1,5 @@
 import { Link, routes } from '@redwoodjs/router'
+import PostListItem from 'src/components/PostListItem'
 
 export const QUERY = gql`
   query PostsQuery {
@@ -16,18 +17,7 @@ export const Success = ({ posts }) => {
   return (
     <>
       {JSON.parse(posts).map((post, i) => (
-        <article key={i}>
-          {console.log(post)}
-          <header>
-            <h2>
-              <Link
-                to={routes.post({ year: parseInt(post.date), slug: post.slug })}
-              >
-                {post.title.rendered}
-              </Link>
-            </h2>
-          </header>
-        </article>
+        <PostListItem key={i} post={post} />
       ))}
     </>
   )
