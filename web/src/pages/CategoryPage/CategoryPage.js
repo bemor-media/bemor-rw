@@ -1,17 +1,14 @@
-import { Link, routes } from '@redwoodjs/router'
+import { useParams } from '@redwoodjs/router'
 import MainLayout from 'src/layouts/MainLayout'
+import PostsByCategoryCell from 'src/components/PostsByCategoryCell'
 
 const CategoryPage = () => {
+  const { slug } = useParams()
   return (
     <MainLayout>
-      <h1>CategoryPage</h1>
-      <p>
-        Find me in <code>./web/src/pages/CategoryPage/CategoryPage.js</code>
-      </p>
-      <p>
-        My default route is named <code>category</code>, link to me with `
-        <Link to={routes.category()}>Category</Link>`
-      </p>
+      <div className="py-12 flex flex-col gap-4 md:gap-8">
+        <PostsByCategoryCell slug={slug} />
+      </div>
     </MainLayout>
   )
 }

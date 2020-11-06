@@ -7,7 +7,7 @@ const MainLayout = ({ children }) => {
   return (
     <>
       <Header />
-      <main className={`px-wrap${pathname !== '/' ? ' flex-1' : ''}`}>
+      <main className={`text-lg px-wrap${pathname !== '/' ? ' flex-1' : ''}`}>
         {children}
       </main>
       <Footer />
