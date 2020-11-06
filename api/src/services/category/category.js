@@ -11,9 +11,17 @@ export const categories = async () => {
 
 export const categoryBySlug = async ({ slug }) => {
   const response = await fetch(`${baseUrl}/wp/v2/categories`)
-  const json = await response.json()
+  const categories = await response.json()
 
-  return JSON.stringify(json)
+  const category = []
+
+  for (var i = 0; i < categories.length; i++) {
+    if (categories[i].slug === slug) {
+      category.push(categories[i])
+    }
+  }
+
+  return JSON.stringify(category)
 }
 
 export const category = async ({ id }) => {
