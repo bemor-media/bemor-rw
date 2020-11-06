@@ -1,5 +1,7 @@
+import MainLayout from 'src/layouts/MainLayout'
+
 export default () => (
-  <main>
+  <MainLayout>
     <style
       dangerouslySetInnerHTML={{
         __html: `
@@ -40,5 +42,5 @@ export default () => (
         <span>404 Page Not Found</span>
       </h1>
     </section>
-  </main>
+  </MainLayout>
 )

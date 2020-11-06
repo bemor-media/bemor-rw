@@ -6,9 +6,10 @@
 // avoid the possibility that it will cause its own error. If it does, Redwood will
 // still render a generic error page, but your users will prefer something a bit more
 // thoughtful. =)
+import MainLayout from 'src/layouts/MainLayout'
 
 export default () => (
-  <main>
+  <MainLayout>
     <style
       dangerouslySetInnerHTML={{
         __html: `
@@ -49,5 +50,5 @@ export default () => (
         <span>Something went wrong</span>
       </h1>
     </section>
-  </main>
+  </MainLayout>
 )
