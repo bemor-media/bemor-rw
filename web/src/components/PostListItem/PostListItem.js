@@ -1,17 +1,22 @@
 import { Link, routes } from '@redwoodjs/router'
 
-const PostListItem = ({ post }) => {
+const PostListItem = ({ post, title, slug, excerpt, category }) => {
   return (
     <article>
       <header>
-        <h2>
+        <h2 className="text-3xl">
           <Link
-            to={routes.post({ year: parseInt(post.date), slug: post.slug })}
+            to={routes.post({
+              category: category ? category : 'mindset',
+              slug: slug ? slug : post.slug,
+            })}
           >
-            {post.title.rendered}
+            {title ? title : post.title.rendered}
           </Link>
         </h2>
-        <div dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} />
+        {excerpt !== undefined && post.excerpt.rendered !== undefined && (
+          <div dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} />
+        )}
       </header>
     </article>
   )

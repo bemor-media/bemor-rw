@@ -1,3 +1,4 @@
+import { useParams } from '@redwoodjs/router'
 import PostListItem from 'src/components/PostListItem'
 
 export const QUERY = gql`
@@ -13,10 +14,11 @@ export const Empty = () => <div>Empty</div>
 export const Failure = ({ error }) => <div>Error: {error.message}</div>
 
 export const Success = ({ postsByCategory }) => {
+  const { slug } = useParams()
   return (
     <>
       {JSON.parse(postsByCategory).map((post, i) => (
-        <PostListItem key={i} post={post} />
+        <PostListItem key={i} post={post} category={slug} />
       ))}
     </>
   )
