@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
 
-const baseUrl = `https://bemor.com/wp-json`
+const baseUrl = `${process.env.WP_URL}wp-json`
 
 export const siteTitle = async () => {
   const response = await fetch(`${baseUrl}/`)
