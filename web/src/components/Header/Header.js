@@ -1,4 +1,5 @@
 import { Link, routes, useLocation } from '@redwoodjs/router'
+import SearchForm from 'src/components/SearchForm'
 import SiteSettingsCell from 'src/components/SiteSettingsCell'
 import CategoriesCell from 'src/components/CategoriesCell'
 
@@ -6,10 +7,11 @@ const Header = () => {
   const { pathname } = useLocation()
   return (
     <>
-      <header className="px-wrap py-2">
-        <Link to={routes.home()}>
+      <header className="font-sans px-wrap py-2 flex items-center justify-between">
+        <Link to={routes.home()} className="text-2xl font-bold text-dark">
           <SiteSettingsCell />
         </Link>
+        <SearchForm />
       </header>
       <nav
         className={`px-wrap py-1 bg-night text-pale${
