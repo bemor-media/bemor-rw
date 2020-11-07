@@ -15,17 +15,22 @@ export const Success = ({ postBySlug }) => {
   return (
     <>
       {console.log(postData)}
-      <header className="mb-8">
-        <h1 className="text-2xl bold">{postData.title.rendered}</h1>
-        {postData.jetpack_featured_media_url && (
-          <img
-            src={postData.jetpack_featured_media_url}
-            className="w-full mt-8"
-          />
-        )}
+      <header
+        className={`${
+          postData.jetpack_featured_media_url
+            ? 'post-featured-image'
+            : 'w-full max-w-4xl mx-auto'
+        } mb-12 text-center`}
+        style={
+          postData.jetpack_featured_media_url && {
+            backgroundImage: 'url(' + postData.jetpack_featured_media_url + ')',
+          }
+        }
+      >
+        <h1>{postData.title.rendered}</h1>
       </header>
       <div
-        className="entry-content"
+        className="entry-content max-w-2xl mx-auto w-full"
         dangerouslySetInnerHTML={{ __html: postData.content.rendered }}
       />
     </>
