@@ -1,12 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&family=Work+Sans:wght@400;500;700&display=swap');
+
 @tailwind base;
 
 html,
 body {
-  @apply min-h-screen w-full overflow-x-hidden bg-pale;
+  @apply min-h-screen w-full overflow-x-hidden bg-pale font-serif text-dark;
 }
 
 #redwood-app {
   @apply min-h-screen flex flex-col;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-sans font-bold;
+}
+
+h1 {
+  @apply text-5xl md:text-7xl;
+}
+
+h2 {
+  @apply text-4xl md:text-6xl;
+}
+
+h3 {
+  @apply text-3xl md:text-5xl;
+}
+
+h4 {
+  @apply text-2xl md:text-4xl;
+}
+
+h5 {
+  @apply text-xl md:text-3xl;
+}
+
+h6 {
+  @apply text-lg md:text-2xl;
 }
 
 a {
@@ -15,6 +50,19 @@ a {
 
 .entry-content > * {
   @apply mb-6;
+}
+
+.post-featured-image {
+  @apply -mt-12 -mx-wrap px-wrap relative flex items-center justify-center min-h-screen-3/4 bg-cover bg-center text-white;
+}
+
+.post-featured-image:before {
+  content: '';
+  @apply absolute w-full h-full bg-opacity-75 bg-black z-0;
+}
+
+.post-featured-image > * {
+  @apply static z-10;
 }
 
 @tailwind components;

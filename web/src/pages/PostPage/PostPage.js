@@ -6,7 +6,7 @@ const PostPage = () => {
   const { slug } = useParams()
   return (
     <MainLayout>
-      <article className="py-12 max-w-2xl mx-auto w-full">
+      <article className="py-12">
         <PostCell slug={slug} />
       </article>
     </MainLayout>
